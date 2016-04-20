@@ -1,15 +1,14 @@
-var express = require('express');
+var app = angular.module('bomApp', []);
 
-
-var app = express();
-
-var port = process.env.PORT || 3000;
-
-app.get('/', function(req, res){
-    res.send('welcome to my API sir!');
-    
-});
-
-app.listen(port, function(){
-    console.log('gulp is running my app on PORT:' + port);
-});
+app.controller('MainCtrl', [
+'$scope',
+function($scope){
+  $scope.test = 'Hello world!';
+  $scope.posts = [
+  'post 1',
+  'post 2',
+  'post 3',
+  'post 4',
+  'post 5'
+];
+}]);
