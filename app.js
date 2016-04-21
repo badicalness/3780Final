@@ -1,14 +1,29 @@
-var app = angular.module('bomApp', []);
 
-app.controller('MainCtrl', [
-'$scope',
-function($scope){
-  $scope.test = 'Hello world!';
-  $scope.posts = [
-  'post 1',
-  'post 2',
-  'post 3',
-  'post 4',
-  'post 5'
-];
-}]);
+
+var bomStats = {
+    pages: 532,
+    chapters: 239,
+    verses: 1000
+}
+
+
+
+  angular.module('bomRadio', [])
+    .controller('bomController', ['$scope', function($scope) {
+
+      
+      $scope.competion = function() {
+          console.log($scope.type);
+          
+          if($scope.type == 'Chapters') {
+              $scope.daysToCompletion = bomStats.chapters / $scope.days;
+              console.log($scope.daysToCompleteion)
+          }
+          
+          if($scope.type == 'Pages') {
+              $scope.daysToCompletion = bomStats.pages / $scope.days;
+              console.log($scope.daysToCompleteion)
+          }
+      }
+      
+    }]);
