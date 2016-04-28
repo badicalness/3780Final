@@ -1,16 +1,14 @@
 angular.module('bomRadio', ["firebase"])
     .controller('bomController', ['$scope', '$http', function($scope, $http) {
         
-        var bomCtrl = this;
         
-        bomCtrl.name = '';
-        $scope.type = '';
         
         $scope.bomStats = {
             pages: 532,
             chapters: 239,
-            verses: 1000,
+            name: '',
             
+        
         };
 
       
@@ -29,7 +27,7 @@ angular.module('bomRadio', ["firebase"])
           }
           
           if($scope.daysToCompletion) {
-              $scope.info = $scope.name + " needs to read " + $scope.daysToCompletion + " " + type + " per day."
+              $scope.info =" You need to read " + $scope.daysToCompletion + " " + type + " per day."
            } else {
                $scope.info = "";
            }
@@ -40,27 +38,10 @@ angular.module('bomRadio', ["firebase"])
           });
          
           $http.get('/', function(data, status){
-              ref.once("value", function(data){
-              var info = snapshot.val();
-              res.send(info);
-          })
+             
+          });
            
-   
-//    $scope.sendInfo = function() {     
-//     $http.post('/', {'info': $scope.info})
-//         .then(function(res) {
-//           console.log('info saved');
-          
-//         })
-//     };
 }
-    // $scope.retrieveInfo = function() {
-    //   $http.get('/').then(function(res) {
-    //     console.log(res.data);
-    //     $scope.info = res.data;
-    //   });
-    // };
-    // $scope.retrieveinfo();
-
+ 
     }]);
 

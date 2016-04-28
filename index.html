@@ -31,10 +31,7 @@
 <script src="app.js"></script>
 
 <form name="myForm" ng-controller="bomController">
-    <h2>Name?</h2>
-  <label>
-    <input type="text" ng-model="$scope.name">
-  </label><br/>
+    
 <h2>What Method?</h2>    
   <label>
     <input ng-class="radio" type="radio" ng-model="$scope.type" value="Chapters">
@@ -51,20 +48,16 @@
   </label><br/>
   </br>
   
-     <button ng-click="competion($scope.type, $scope.days).sendInfo">Submit</button>
+     <button ng-click="competion($scope.type, $scope.days)">Submit</button>
 <br/>
  </br>
- <!--{{$scope.name}} needs to read {{daysToCompletion}} {{$scope.type}} per day.-->
- {{info}}
- </form>
+ 
+ {{info}}</br></br>
 
-
-<form>
-<!--<p ng-repeat="chapters in $scope.bomStats | unique: '$scope.bomStats.chapters'">
-    {{$scope.name}} needs to read {{$scope.daysToCompletion}} {{$scope.type}} per day.
-    </p>-->
-    Last updates: {{info}}</br>
-   
+    <div ng-controller="bomController">
+    Last updates: </br>
+    <p>{{info}}</br></p>
+   </div>
 
 </form>
 </body>
