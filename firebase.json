@@ -1,0 +1,9 @@
+{
+  "firebase": "final3780bomapp",
+  "public": "1",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

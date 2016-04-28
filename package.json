@@ -10,6 +10,7 @@
   "author": "erin griffeth",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.11.2",
     "firebase": "^2.4.2",
     "gulp": "^3.9.1",
